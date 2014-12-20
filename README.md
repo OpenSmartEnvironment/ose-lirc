@@ -12,7 +12,8 @@ It forwards received commands to the [control.remote](http://opensmartenvironmen
 - No test suite
 
 This is not yet a piece of download-and-use software. Its important
-to understand the basic principles covered by this documentation.
+to understand the basic principles covered by the
+[documentation](http://opensmartenvironment.github.io/doc/).
 
 Use of this software is currently recommended only for users that
 wish participate in the development process, see
@@ -22,6 +23,14 @@ wish participate in the development process, see
 To get started with OSE, refer to the [ose-bundle](http://opensmartenvironment.github.io/doc/modules/bundle.html) package and
 [Media player example application](http://opensmartenvironment.github.io/doc/modules/bundle.media.html). You can read the entire OSE
 documentation [here]( http://opensmartenvironment.github.io/doc).
+
+## Command names pre-processing
+
+Received LIRC command names are pre-processed by removing
+"KEY_" and "BTN_" and converting the rest of the command names to
+lowercase.
+
+It also suppresses double presses of the same button within 150 ms.
 
 ## Modules
 Open Smart Environment LIRC package consists of the following modules:
@@ -33,7 +42,9 @@ Open Smart Environment LIRC package consists of the following modules:
 Entry kind for connecting to and communicating with the LIRC
 daemon.
 
-Uses [control.remote](http://opensmartenvironment.github.io/doc/modules/control.remote.html) component.
+Receives and processes LIRC commands from the LIRC Unix socket
+(/var/run/lirc/lircd). Emits the "receive" event, which can then
+be, for example, handled by the [control.remote](http://opensmartenvironment.github.io/doc/modules/control.remote.html) component.
 
 Module [LIRC kind](http://opensmartenvironment.github.io/doc/classes/lirc.lib.lirc.html) reference ... 
 
