@@ -10,10 +10,10 @@ exports = require('ose')
  */
 
 /**
- * @caption OSE LIRC content
+ * @caption LIRC content
  *
  * @readme
- * Provides files of OSE LIRC package to the browser.
+ * Provides files of [ose-lirc] package to the browser.
  *
  * @class lirc.content
  * @type singleton

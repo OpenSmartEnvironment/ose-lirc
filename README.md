@@ -1,9 +1,12 @@
-# Open Smart Environment LIRC package
+# Open Smart Environment - LIRC
+This package is a part of OSE suite.
+The main advantage of OSE is the easy creation of applications
+consisting of multiple instances working as a single whole. The
+objective is to develop an all-encompassing personal mesh running
+various devices including HTPCs, phones, tablets, workstations,
+servers, Raspberry Pis, home automation gadgets, wearables, drones etc.
 
-This package allows to use LIRC in OSE. It is thus possible to
-manage your environment using IR remote controllers.
-
-It forwards received commands to the [control.remote](http://opensmartenvironment.github.io/doc/modules/control.remote.html) component.
+For more information about OSE see **the [documentation](http://opensmartenvironment.github.io/doc/)**.
 
 ## Status
 - Pre-alpha stage (insecure and buggy)
@@ -17,57 +20,24 @@ to understand the basic principles covered by the
 
 Use of this software is currently recommended only for users that
 wish participate in the development process, see
-[Contributions](#contributions).
+[contributions](http://opensmartenvironment.github.io/doc/#contrib).
 
-## Getting started
-To get started with OSE, refer to the [ose-bundle](http://opensmartenvironment.github.io/doc/modules/bundle.html) package and
-[Media player example application](http://opensmartenvironment.github.io/doc/modules/bundle.media.html). You can read the entire OSE
-documentation [here]( http://opensmartenvironment.github.io/doc).
+## Platforms
+OSE is developed in JavaScript on the following platforms.
+- Node.js (>0.10) running on Debian Jessie and Raspbian
+- recent versions of Firefox
+- recent versions of Chromium/Chrome
 
-## Command names pre-processing
+It, however, probably also runs on other recent browsers and Linux
+distributions.
 
-Received LIRC command names are pre-processed by removing
-"KEY_" and "BTN_" and converting the rest of the command names to
-lowercase.
+## Package description
+This package allows to use LIRC in OSE. It is thus possible to
+manage your environment using IR remote controllers.
 
-It also suppresses double presses of the same button within 150 ms.
+It forwards received commands to the [control.remote] component.
 
-## Modules
-Open Smart Environment LIRC package consists of the following modules:
-- LIRC kind
-- OSE LIRC core
-- OSE LIRC content
-
-### LIRC kind
-Entry kind for connecting to and communicating with the LIRC
-daemon.
-
-Receives and processes LIRC commands from the LIRC Unix socket
-(/var/run/lirc/lircd). Emits the "receive" event, which can then
-be, for example, handled by the [control.remote](http://opensmartenvironment.github.io/doc/modules/control.remote.html) component.
-
-Module [LIRC kind](http://opensmartenvironment.github.io/doc/classes/lirc.lib.lirc.html) reference ... 
-
-### OSE LIRC core
-Core singleton of ose-lirc npm package. Register [entry kinds](http://opensmartenvironment.github.io/doc/classes/ose.lib.kind.html)
-defined by this package to the `"control"` [scope](http://opensmartenvironment.github.io/doc/classes/ose.lib.scope.html).
-
-Module [OSE LIRC core](http://opensmartenvironment.github.io/doc/classes/lirc.lib.html) reference ... 
-
-### OSE LIRC content
-Provides files of OSE LIRC package to the browser.
-
-Module [OSE LIRC content](http://opensmartenvironment.github.io/doc/classes/lirc.content.html) reference ... 
-
-## <a name="contributions"></a>Contributions
-To get started contributing or coding, it is good to read about the
-two main npm packages [ose](http://opensmartenvironment.github.io/doc/modules/ose.html) and [ose-bb](http://opensmartenvironment.github.io/doc/modules/bb.html).
-
-This software is in the pre-alpha stage. At the moment, it is
-premature to file bugs. Input is, however, much welcome in the form
-of ideas, comments and general suggestions.  Feel free to contact
-us via
-[github.com/opensmartenvironment](https://github.com/opensmartenvironment).
+The documentation for "ose-lirc" package can be found **[here](http://opensmartenvironment.github.io/doc/#ose-lirc#)**.
 
 ## Licence
 This software is released under the terms of the [GNU General
