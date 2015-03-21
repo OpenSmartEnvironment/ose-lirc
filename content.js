@@ -25,3 +25,5 @@ function Init() {  // {{{2
   this.addModule('lib/index');
   this.addModule('lib/lirc/index');
 };
+
+// }}}1
