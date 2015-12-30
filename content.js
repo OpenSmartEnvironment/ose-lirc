@@ -1,6 +1,6 @@
 'use strict';
 
-var O = require('ose').object(module, Init, 'ose/lib/http/content');
+var O = require('ose').object(module, 'ose/lib/http/content');
 exports = O.init();
 
 /** Docs  {{{1
@@ -19,11 +19,6 @@ exports = O.init();
  */
 
 // Public {{{1
-function Init() {  // {{{2
-  O.super.call(this);
+exports.addModule('lib/index');
+exports.addModule('lib/lirc/index');
 
-  this.addModule('lib/index');
-  this.addModule('lib/lirc/index');
-};
-
-// }}}1
